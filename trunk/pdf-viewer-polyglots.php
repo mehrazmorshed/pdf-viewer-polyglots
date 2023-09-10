@@ -3,7 +3,7 @@
 /*
  * Plugin Name:       PDF Viewer Ployglots
  * Plugin URI:        https://wordpress.org/plugins/pdf-viewer-polyglots
- * Description:       PDF Viewer Polyglots allows to read pdf in different languages.
+ * Description:       Read PDF in multiple language.
  * Version:           1.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
