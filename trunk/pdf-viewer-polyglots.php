@@ -30,28 +30,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Load the text-domain
 function pdf_viewer_load_textdomain() {
     load_plugin_textdomain( 'pdf-viewer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 }
 add_action( 'init', 'pdf_viewer_load_textdomain' );
-
-
-
-
-
-
-
-
-
-
-
-
 
 function pdf_viewer_option_page() {
 
@@ -148,63 +134,33 @@ function pdf_viewer_create_page() {
     <?php
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * REGISTERING SHORTCODE
- */
-add_shortcode('view_pdf', 'pdf_viewer_polyglots');
-
-/**
- * RENDERING A FORM
- */
-function pdf_viewer_polyglots() {
-
-
-$pdf_lang = '';
-
-
-
-if( get_option( 'pdf-viewer-option' ) == 'en' ) {
-    $pdf_lang = 'English';
-} elseif ( get_option( 'pdf-viewer-option' ) == 'ja' ) {
-    $pdf_lang = 'Japanese';
-} elseif ( get_option( 'pdf-viewer-option' ) == 'bn' ) {
-    $pdf_lang = 'Bangla';
-} elseif ( get_option( 'pdf-viewer-option' ) == 'hi' ) {
-    $pdf_lang = 'Hindi';
+function display_pdf($atts) {
+    $pdf_attachment = get_post($atts);
+    if ($pdf_attachment && 'application/pdf' === get_post_mime_type($pdf_attachment)) {
+        $pdf_embed = wp_get_attachment_url($pdf_attachment->ID);
+        return "<iframe src='$pdf_embed' width='100%' height='600'></iframe>";
+    } else {
+        return "Invalid PDF ID or PDF not found.";
+    }
 }
 
+add_shortcode('view-pdf', 'pdf_viewer_polyglots');
 
+function pdf_viewer_polyglots() {
 
-    $pdf_content = '';
-    $pdf_content .= $pdf_lang;
-
-    return $pdf_content;
- }
-
-
-
-
-
-
-
-
-
-
-
-
+    if( get_option( 'pdf-viewer-option' ) == 'en' ) {
+        return display_pdf(33);
+    }
+    elseif ( get_option( 'pdf-viewer-option' ) == 'ja' ) {
+        return display_pdf(31);
+    }
+    elseif ( get_option( 'pdf-viewer-option' ) == 'bn' ) {
+        return display_pdf(30);
+    }
+    elseif ( get_option( 'pdf-viewer-option' ) == 'hi' ) {
+        return display_pdf(32);
+    }
+}
 
 function pdf_viewer_plugin_activation() {
 
