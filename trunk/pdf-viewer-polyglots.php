@@ -7,7 +7,7 @@
  * Version:           1.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Tested up to:      6.3
+ * Tested up to:      6.3.1
  * Author:            Mehraz Morshed
  * Author URI:        https://profiles.wordpress.org/mehrazmorshed/
  * License:           GPL v2 or later
