@@ -3,7 +3,7 @@ Contributors: mehrazmorshed
 Donate link: https://www.buymeacoffee.com/mehrazmorshed
 Tags: pdf viewer, read pdf, pdf
 Requires at least: 5.2
-Tested up to: 6.3
+Tested up to: 6.3.1
 Stable tag: 1.0
 Requires PHP: 7.2
 License: GPLv2 or later
