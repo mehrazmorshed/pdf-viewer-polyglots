@@ -44,7 +44,7 @@ Install the PDF Viewer Polyglots plugin via WordPress Dashboard (from plugin dir
 
 = How to read PDF in different languages? =
 
-Activate the plugin. That's it.
+Activate the plugin and select a language from the settings page. That's it.
 
 == Changelog ==
 
