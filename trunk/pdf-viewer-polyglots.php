@@ -77,22 +77,22 @@ function pdf_viewer_create_page() {
                 <label for="pdf-viewer-option"><?php esc_attr_e( 'Language Settings', 'pdf-viewer' ); ?></label>
 
                 <label class="radios">
-                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-no" value="en" <?php if( get_option( 'pdf-viewer-option' ) == 'en' ) { echo 'checked="checked"'; } ?>>
+                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-en" value="en" <?php if( get_option( 'pdf-viewer-option' ) == 'en' ) { echo 'checked="checked"'; } ?>>
                     <span><?php _e( 'English (en)', 'pdf-viewer' ); ?></span>
                 </label>
 
                 <label class="radios">
-                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-no" value="ja" <?php if( get_option( 'pdf-viewer-option' ) == 'ja' ) { echo 'checked="checked"'; } ?>>
+                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-ja" value="ja" <?php if( get_option( 'pdf-viewer-option' ) == 'ja' ) { echo 'checked="checked"'; } ?>>
                     <span><?php _e( '日本語 (ja)', 'pdf-viewer' ); ?></span>
                 </label>
 
                 <label class="radios">
-                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-yes" value="bn" <?php if( get_option( 'pdf-viewer-option' ) == 'bn' ) { echo 'checked="checked"'; } ?>>
+                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-bn" value="bn" <?php if( get_option( 'pdf-viewer-option' ) == 'bn' ) { echo 'checked="checked"'; } ?>>
                     <span><?php _e( 'বাংলা (bn)', 'pdf-viewer' ); ?></span>
                 </label>
 
                 <label class="radios">
-                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-yes" value="hi" <?php if( get_option( 'pdf-viewer-option' ) == 'hi' ) { echo 'checked="checked"'; } ?>>
+                    <input type="radio" name="pdf-viewer-option" id="pdf-viewer-option-hi" value="hi" <?php if( get_option( 'pdf-viewer-option' ) == 'hi' ) { echo 'checked="checked"'; } ?>>
                     <span><?php _e( 'हिन्दी (hi)', 'pdf-viewer' ); ?></span>
                 </label>
 
@@ -172,7 +172,6 @@ add_shortcode('view_pdf', 'pdf_viewer_polyglots');
 function pdf_viewer_polyglots() {
 
 
-
 $pdf_lang = '';
 
 
@@ -188,9 +187,9 @@ if( get_option( 'pdf-viewer-option' ) == 'en' ) {
 }
 
 
-    
+
     $pdf_content = '';
-    $pdf_content .= '<div>'. $pdf_lang .'</div>';
+    $pdf_content .= $pdf_lang;
 
     return $pdf_content;
  }
