@@ -9,7 +9,7 @@ Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Hide Titles of all Posts and Pages
+Read PDF in multiple language.
 
 == Description ==
 
